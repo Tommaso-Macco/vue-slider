@@ -32,7 +32,18 @@ var carousel = new Vue ({
     },
     methods: {
         nextup: function (){
-            this.activeslide = 3
+            if (this.activeslide >this.slides.length -2) {
+                this.activeslide = 0
+            }else {
+                this.activeslide ++
+            }
+        },
+        prevup: function (){
+            if (this.activeslide === 0) {
+                this.activeslide = 4
+            }else {
+                this.activeslide --
+            }
         }
-    }
+    },
 })
