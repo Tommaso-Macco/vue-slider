@@ -10,25 +10,22 @@
 </head>
 <body>
     <div id="app" class="container">
-        <div class="items">
-            <div class="item active">
-                <img
-                 :src=""
-                 :alt="">
-                <div class="text">
-                    <h2>TESTO</h2>
-                    <p>TEST TESTO</p>
-                </div>
+        <div class="main active">
+            <img 
+            :src="slides[activeslide].image"
+            :alt="slides[activeslide].title">
+            <div class="text">
+                <h2>{{slides[activeslide].title}}</h2>
+                <p>{{slides[activeslide].text}}</p>
             </div>
         </div>
         <div class="thumbs">
             <div class="prev"></div>
-            <div class="next"></div>
-            <div v-for="obj, i in carousel" class="thumb" :asb>
-                <img :src="obj.image" :alt="obj.title">
+            <div class="next" @click="nextup"></div>
+            <div v-for="slide, i in slides" :class="i === activeslide ? 'active' : '' "  class="thumb" :key>
+                <img :src="slide.image" alt="slide.title">
             </div>
         </div>
-
     </div>
 
 

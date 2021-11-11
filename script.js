@@ -1,7 +1,8 @@
 var carousel = new Vue ({
     el: "#app",
     data: {
-        carousel: [
+        activeslide: 0,
+        slides: [
             {
                 image: 'img/01.jpg',
                 title: 'Svezia',
@@ -29,6 +30,11 @@ var carousel = new Vue ({
             },
         ]
     },
+    methods: {
+        nextup: function (){
+            this.activeslide = + 1
+        }
+    }
 })
 
 
