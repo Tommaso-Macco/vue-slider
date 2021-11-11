@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Carousel Vue</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="items">
+            <div class="item active">
+                <img
+                 :src=""
+                 :alt="">
+                <div class="text">
+                    <h2>TESTO</h2>
+                    <p>TEST TESTO</p>
+                </div>
+            </div>
+        </div>
+        <div class="thumbs">
+            <div class="prev"></div>
+            <div class="next"></div>
+            <div v-for="obj, i in carousel" class="thumb" :asb>
+                <img :src="obj.image" :alt="obj.title">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
